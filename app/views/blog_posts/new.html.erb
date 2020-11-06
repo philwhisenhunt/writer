@@ -1,3 +1,6 @@
 <h1>New Post</h1>
 <p>Make a new blog post here</p>
 <%= text_field(:blog_post, :title, size: 200) %>
+
+<%= form_with @model: @blogPost do |the form| %>
+    <%end%> 
