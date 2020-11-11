@@ -1,7 +1,7 @@
 <h1>New Post</h1>
 <p>Make a new blog post here</p>
-
-<%= form_with model: @blogPost do |f| %>
+<p> <%= flash.inspect %> </p>
+<%= form_with( model: @blogPost, local: true) do |f| %>
     <%= f.text_field :title %>
     <br>
     <%= f.text_area :post_content %>
