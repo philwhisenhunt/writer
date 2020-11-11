@@ -1,5 +1,4 @@
 class BlogPost < ApplicationRecord
-    belongs_to :user
-    has_one :content
+    # belongs_to :user, optional
     has_many :tags
 end
