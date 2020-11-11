@@ -1,6 +1,6 @@
 class BlogPostsController < ApplicationController
   def new
-    @blogpost = blogPost.new(title: :title)
+    @blogpost = BlogPost.create(title: :title, post_content: post_content)
   end
 
   def edit
