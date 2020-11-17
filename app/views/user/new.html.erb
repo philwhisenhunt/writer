@@ -1,4 +1,9 @@
 <h1>Sign up</h1>
+<%= form_with(model: @user, local: true) do |f|%>
 <p>Name</p>
-
+<%= f.text_field :name %>
 <p>Email</p>
+<%= f.text_field :email %>
+<%= f.submit "Sign up" %>
+
+<% end %>
