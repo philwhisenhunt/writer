@@ -2,7 +2,6 @@ Log in
 <%=form_with model: @user do |f| %>
     <p>Name</p>
 <%= f.text_field :user_email %>
-<%= f.text_field :user_name %>
 <%= f.password_field :password %>
 <%= f.password_field :password_confirmation %>
 <%= f.submit "Login" %>
