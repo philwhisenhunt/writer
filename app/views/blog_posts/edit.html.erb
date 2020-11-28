@@ -1,2 +1,9 @@
-<h1>BlogPosts#edit</h1>
-<p>Find me in app/views/blog_posts/edit.html.erb</p>
+<h1>Edit Post</h1>
+<p>Edit a blog post here</p>
+<p> <%= flash.inspect %> </p>
+<%= form_with( model: @blogPost, local: true) do |f| %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.text_area :post_content %>
+    <%= f.submit "Save" %> 
+    <%end%> 
