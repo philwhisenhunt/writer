@@ -4,6 +4,6 @@
 <%= form_with( model: @blogPost, local: true) do |f| %>
     <%= f.text_field :title %>
     <br>
-    <%= f.text_area :post_content %>
+    <%= f.text_area :post_content :value=>"The text of the article should go here" %>
     <%= f.submit "Save" %> 
     <%end%> 
