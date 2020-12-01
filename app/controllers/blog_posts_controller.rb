@@ -10,7 +10,8 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    @blogPost = BlogPost.new(blog_post_params)
+    # byebug
+    @blogPost = BlogPost.new
     if @blogPost.save
       redirect_to @blogPost
     else
