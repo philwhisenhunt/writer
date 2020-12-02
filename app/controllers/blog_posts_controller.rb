@@ -9,9 +9,12 @@ class BlogPostsController < ApplicationController
   def delete
   end
 
+  def show
+  end
+
   def create
     # byebug
-    @blogPost = BlogPost.new
+    @blogPost = BlogPost.new(blog_post_params)
     if @blogPost.save
       redirect_to @blogPost
     else
