@@ -10,6 +10,8 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    # byebug
+    @blogPost = BlogPost.find(params[:id])
   end
 
   def create
