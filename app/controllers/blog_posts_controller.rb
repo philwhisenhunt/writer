@@ -4,6 +4,8 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
+    @blogPost = BlogPost.find(params[:id])
+
   end
 
   def delete
