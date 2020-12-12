@@ -1,10 +1,10 @@
-class blog_postsController < ApplicationController
+class BlogPostsController < ApplicationController
   def new
-    @blog_post = blog_post.new
+    @blog_post = BlogPost.new
   end
 
   def edit
-    @blog_post = blog_post.find(params[:id])
+    @blog_post = BlogPost.find(params[:id])
 
   end
 
@@ -13,12 +13,12 @@ class blog_postsController < ApplicationController
 
   def show
     # byebug
-    @blog_post = blog_post.find(params[:id])
+    @blog_post = BlogPost.find(params[:id])
   end
 
   def create
     # byebug
-    @blog_post = blog_post.new(blog_post_params)
+    @blog_post = BlogPost.new(blog_post_params)
     if @blog_post.save
       redirect_to @blog_post
     else
