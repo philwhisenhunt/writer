@@ -27,6 +27,15 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def update
+    if @blog_post.save
+      redirect_to @blog_post
+    else
+      flash[:error] = "Didn't update."
+      render :show
+    end
+  end
+
   def blog_post_params
     params.require(:blog_post).permit(
       :title,
