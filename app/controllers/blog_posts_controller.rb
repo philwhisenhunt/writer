@@ -9,6 +9,7 @@ class BlogPostsController < ApplicationController
   end
 
   def delete
+    @blog_post.destroy
   end
 
   def show
