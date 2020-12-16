@@ -9,7 +9,11 @@ class BlogPostsController < ApplicationController
   end
 
   def delete
-    @blog_post.destroy
+    if @blog_post.destroy
+    else
+      flash[:error] = "Didn't destroy"
+      render :show
+
   end
 
   def show
