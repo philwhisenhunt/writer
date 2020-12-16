@@ -10,6 +10,7 @@ class BlogPostsController < ApplicationController
 
   def delete
     if @blog_post.destroy
+      flash[:success] = "#{@blog_post.name} was destroyed"
     else
       flash[:error] = "Didn't destroy"
       render :show
