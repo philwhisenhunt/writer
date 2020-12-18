@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   def new
+    #How can we connect the blogpost to an author?
     @blog_post = BlogPost.new
   end
 
