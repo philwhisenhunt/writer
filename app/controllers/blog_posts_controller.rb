@@ -1,11 +1,16 @@
 class BlogPostsController < ApplicationController
+  #Add before actions 
+  # At a point have different before_actions
+  before_action :get_blog_post, only: %i[show edit delete update]
+
   def new
     #How can we connect the blogpost to an author?
     @blog_post = BlogPost.new
+    @blog_post = User.first.blog_posts.new
   end
 
   def edit
-    @blog_post = BlogPost.find(params[:id])
+   
 
   end
 
@@ -15,17 +20,18 @@ class BlogPostsController < ApplicationController
     else
       flash[:error] = "Didn't destroy"
       render :show
+    end
 
   end
 
   def show
     # byebug
-    @blog_post = BlogPost.find(params[:id])
+   
   end
 
   def create
     # byebug
-    @blog_post = BlogPost.new(blog_post_params)
+    @blog_post = User.find(1).blog_posts.new(blog_post_params)
     if @blog_post.save
       redirect_to @blog_post
     else
@@ -36,7 +42,7 @@ class BlogPostsController < ApplicationController
 
   def update
     
-    @blog_post = BlogPost.find(params[:id])
+   
     @blog_post.update(blog_post_params)
     if @blog_post.save
       redirect_to @blog_post
@@ -46,10 +52,16 @@ class BlogPostsController < ApplicationController
     end
   end
 
+
   def blog_post_params
     params.require(:blog_post).permit(
       :title,
       :post_content
     )
   end
+  private
+  def get_blog_post
+    @blog_post = BlogPost.find(params[:id])
+  end
+  
 end
